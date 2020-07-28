@@ -5,10 +5,7 @@
   "private": true,
   "scripts": {
     "test": "jest --coverage",
-    "build": "webpack",
-    "babel": "babel extension_dev -d extension",
-    "dailymath-docs": "./node_modules/.bin/jsdoc ./extension_dev/dailymath_edge.js --configure .jsdoc.json --verbose",
-    "canvaspen-docs": "./node_modules/.bin/jsdoc ./extension_dev/canvaspen_edge.js -d ./out_canvaspen --configure .jsdoc.json --verbose"
+    "build": "webpack"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",

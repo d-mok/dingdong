@@ -1,0 +1,24 @@
+{
+  "name": "dingdong",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "webpack",
+    "babel": "babel extension_dev -d extension",
+    "dailymath-docs": "./node_modules/.bin/jsdoc ./extension_dev/dailymath_edge.js --configure .jsdoc.json --verbose",
+    "canvaspen-docs": "./node_modules/.bin/jsdoc ./extension_dev/canvaspen_edge.js -d ./out_canvaspen --configure .jsdoc.json --verbose"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "jest": "^25.3.0",
+    "jsdoc": "^3.6.4",
+    "minami": "^1.2.3",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

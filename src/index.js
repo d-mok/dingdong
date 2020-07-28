@@ -1,3 +1,3 @@
 import './sweet';
-import './backendoo';
+import './backend';
 import './regisvue';

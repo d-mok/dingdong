@@ -1,4 +1,3 @@
-
 globalThis.sweet = {
     async warn(title, text) {
         // show a warning dialog, will throw error if dismissed by user
@@ -11,7 +10,7 @@ globalThis.sweet = {
         return res.isConfirmed;
     },
     async ask(title, text, preset = "", inputType = "text") {
-        // show a dialog asking the user a input
+        // show a dialog asking the user for a input, will throw error if dismissed by user
         const res = await Swal.fire({
             title: title,
             text: text,

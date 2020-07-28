@@ -12,13 +12,18 @@ function getComponents(context) {
     });
 }
 
-
+// register vue components, use like:
+// const vueComponents = require.context('@/components', true, /[A-Z]\w+\.(vue|js)$/);
+// registerVueComponents(Vue, vueComponents);
 globalThis.registerVueComponents = function (vue, context) {
     getComponents(context).forEach(c => {
         vue.component(c.componentName, c.component);
     });
 };
 
+// return a routes object, use like:
+// const routeComponents = require.context('@/pages', true, /[A-Z]\w+\.(vue|js)$/);
+// const routes = registerVueRoutes(routeComponents);
 globalThis.registerVueRoutes = function (context) {
     return getComponents(context).map(c => ({
         path: '/' + c.componentName.toLowerCase(),

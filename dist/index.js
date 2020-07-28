@@ -92,8 +92,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sweet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _sweet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sweet__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _backendoo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _backendoo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_backendoo__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _backend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _backend__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_backend__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _regisvue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _regisvue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_regisvue__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -117,7 +117,7 @@ globalThis.sweet = {
   },
 
   async ask(title, text, preset = "", inputType = "text") {
-    // show a dialog asking the user a input
+    // show a dialog asking the user for a input, will throw error if dismissed by user
     const res = await Swal.fire({
       title: title,
       text: text,
@@ -314,13 +314,19 @@ function getComponents(context) {
       component
     };
   });
-}
+} // register vue components, use like:
+// const vueComponents = require.context('@/components', true, /[A-Z]\w+\.(vue|js)$/);
+// registerVueComponents(Vue, vueComponents);
+
 
 globalThis.registerVueComponents = function (vue, context) {
   getComponents(context).forEach(c => {
     vue.component(c.componentName, c.component);
   });
-};
+}; // return a routes object, use like:
+// const routeComponents = require.context('@/pages', true, /[A-Z]\w+\.(vue|js)$/);
+// const routes = registerVueRoutes(routeComponents);
+
 
 globalThis.registerVueRoutes = function (context) {
   return getComponents(context).map(c => ({

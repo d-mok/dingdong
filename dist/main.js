@@ -104,6 +104,8 @@ class car {
 }
 
 let c = new car();
+d = new car();
+globalThis.e = new car();
 
 /***/ })
 /******/ ]);

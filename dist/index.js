@@ -214,6 +214,15 @@ globalThis.backend = {
     window.location.replace(backend.root_url + "/login?redirect=" + url);
   },
 
+  async status() {
+    return await backend.get('status');
+  },
+
+  async logout() {
+    await backend.get('logout');
+    backend.login();
+  },
+
   async checkLogin() {
     // the backend should have /status endpoint
     const status = await backend.get('status');

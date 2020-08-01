@@ -9,7 +9,7 @@ module.exports = {
         // library: 'MathSoil',
     },
     optimization: {
-        minimize: false
+        minimize: true
     },
     module: {
         rules: [

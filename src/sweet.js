@@ -4,7 +4,7 @@ globalThis.sweet = {
         const res = await Swal.fire({
             title: title,
             text: text,
-            icon: "warning",
+            icon: "warning"
         });
         if (!res.isConfirmed) throw 'Sweet Confirm Dismissed! Stop Execution';
         return res.isConfirmed;
@@ -17,7 +17,7 @@ globalThis.sweet = {
             input: inputType,
             icon: "question",
             inputValue: preset,
-            inputValidator: (x) => (!!x ? null : "Enter Something!")
+            inputValidator: (x) => (!!x ? null : "Enter Something!"),
         });
         if (!('value' in res)) throw 'Sweet Input Dismissed! Stop Execution';
         return res.value;
@@ -63,6 +63,7 @@ globalThis.sweet = {
             html: '<textarea id="swal-input2" style="height:auto!important" class="swal2-input" rows="15">' + show + '</textarea>',
             width: "60%",
             icon: "info",
+            scrollbarPadding: false
         });
     }
 };

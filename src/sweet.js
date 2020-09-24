@@ -4,7 +4,8 @@ globalThis.sweet = {
         const res = await Swal.fire({
             title: title,
             text: text,
-            icon: "warning"
+            icon: "warning",
+            scrollbarPadding: false
         });
         if (!res.isConfirmed) throw 'Sweet Confirm Dismissed! Stop Execution';
         return res.isConfirmed;
@@ -18,6 +19,7 @@ globalThis.sweet = {
             icon: "question",
             inputValue: preset,
             inputValidator: (x) => (!!x ? null : "Enter Something!"),
+            scrollbarPadding: false
         });
         if (!('value' in res)) throw 'Sweet Input Dismissed! Stop Execution';
         return res.value;
@@ -27,7 +29,8 @@ globalThis.sweet = {
         Swal.fire({
             title: title,
             text: text,
-            icon: "error"
+            icon: "error",
+            scrollbarPadding: false
         });
     },
     cheer(title, text) {
@@ -35,7 +38,8 @@ globalThis.sweet = {
         Swal.fire({
             title: title,
             text: text,
-            icon: "success"
+            icon: "success",
+            scrollbarPadding: false
         });
     },
     toast(title, text, icon = "success") {
@@ -52,7 +56,8 @@ globalThis.sweet = {
             onOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer);
                 toast.addEventListener('mouseleave', Swal.resumeTimer);
-            }
+            },
+            scrollbarPadding: false
         });
     },
     show(title, text, show) {

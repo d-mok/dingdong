@@ -26,7 +26,8 @@ The frontend must have:
 
 globalThis.backend = {
     // decide root_url on development or production
-    root_url: NODE_ENV == "development" ? 'https://localhost:5000' : window.location.origin,
+
+    root_url: NODE_ENV == "development" ? 'https://localhost:5000' : (typeof CUSTOM_BACKEND === 'undefined' ? window.location.origin : CUSTOM_BACKEND),
     login() {
         // after login, should redirect to current url
         const url = window.location.href;
